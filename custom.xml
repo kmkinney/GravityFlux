@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CUSTOM LEVEL AREA -->
+
+<levels>
+	
+	<!-- EXAMPLE LEVEL-->
+	<level width="1000">
+		<spaceman>
+			<xpos>10</xpos>
+			<ypos>600</ypos>
+		</spaceman>
+		<flag>
+			<xpos>900</xpos>
+			<ypos>600</ypos>
+		</flag>
+		<hazards>
+			<hazard type="spike">
+				<xpos>200</xpos>
+				<ypos>600</ypos>
+				<width>1</width>
+			</hazard>
+		</hazards>
+		<platforms>
+			<platform>
+				<xpos>0</xpos>
+				<ypos>600</ypos>
+				<width>1000</width>
+				<height>10</height>
+			</platform>
+		</platforms>
+	</level>
+</levels>
