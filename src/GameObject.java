@@ -3,6 +3,7 @@
  * 2nd period
  */
 import java.awt.Graphics2D;
+import java.awt.Toolkit;
 import java.awt.Color;
 import java.awt.geom.Rectangle2D;
 import java.io.*;

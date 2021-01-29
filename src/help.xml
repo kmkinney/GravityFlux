@@ -7,9 +7,15 @@
 	<!--Training Level-->
 	<level width="5000">
 		<spaceman>
-			<xpos>10</xpos>
-			<ypos>600</ypos>
+			<xpos>50</xpos>
+			<ypos>200</ypos>
 		</spaceman>
+		<objects>
+			<object type="space-ship">
+				<xpos>10</xpos>
+				<ypos>200</ypos>
+			</object>
+		</objects>
 		<flag>
 			<xpos>4500</xpos>
 			<ypos>600</ypos>
@@ -27,6 +33,12 @@
 				<ypos>600</ypos>
 				<width>3000</width>
 				<height>100</height>
+			</platform>
+			<platform>
+				<xpos>3000</xpos>
+				<ypos>650</ypos>
+				<width>1200</width>
+				<height>50</height>
 			</platform>
 			<platform>
 				<xpos>4200</xpos>

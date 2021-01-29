@@ -37,9 +37,10 @@ public class SpaceMan extends GameObject
 	private int sprRow, sprCol;
 	private int walkAccDelay;
 	private Direction dir;
-	private boolean jumping, flipping, flipped, canFlip, canJump;
+	private boolean jumping, flipping, flipped, canFlip;
 	private double radians;
 	private double x0, y0;
+	private double platformSpeed;
 	
 	/**
 	 * Constructs a SpaceMan with given bottom left x and y.
@@ -67,8 +68,9 @@ public class SpaceMan extends GameObject
 		flipping=false;
 		flipped=false;
 		canFlip=true;
-		canJump=true;
 		radians=0;
+		platformSpeed=0;
+		this.fall();
 	}
 	/**
 	 * Sets the direction to the given value.
@@ -94,7 +96,7 @@ public class SpaceMan extends GameObject
 				curr=sprites[sprRow][sprCol];
 			}
 			else if(d==Direction.STOP){
-				setVelX(0);
+				setVelX(platformSpeed);
 				setAX(0);
 				sprCol = 1;
 				curr=sprites[sprRow][sprCol];
@@ -111,7 +113,7 @@ public class SpaceMan extends GameObject
 			velX+=aX;
 			velY+=aY;
 		}   
-		if(Math.abs(velX)>=WALK_SPEED){
+		if(Math.abs(velX)>=WALK_SPEED+Math.abs(platformSpeed)){
 			setAX(0);
 		}
 		if(!flipped && velY>MAX_FALL_SPEED || flipped && velY<-MAX_FALL_SPEED){
@@ -170,6 +172,7 @@ public class SpaceMan extends GameObject
 			jumping=true;
 			setVelY(flipped?JUMP_SPEED:-JUMP_SPEED);
 			setAY(flipped?-G:G);
+			platformSpeed=0;
 		}
 	}
 	/**
@@ -184,7 +187,6 @@ public class SpaceMan extends GameObject
 	 */
 	public void stopJump()
 	{
-		canJump=true;
 		jumping=false;
 		canFlip=true;
 		setVelY(0);
@@ -224,6 +226,7 @@ public class SpaceMan extends GameObject
 		radians=0;
 		sprRow=0;
 		sprCol=1;
+		platformSpeed=0;
 	}
 	
 	/**
@@ -278,16 +281,7 @@ public class SpaceMan extends GameObject
 	 * @return whether the SpaceMan is jumping.
 	 */
 	public boolean isJumping(){return jumping;}
-	/**
-	 * Returns whether the SpaceMan is jumping.
-	 * @return whether the SpaceMan is jumping.
-	 */
-	public boolean canJump(){return !jumping&&canJump;}
-	/**
-	 * Returns whether the SpaceMan is jumping.
-	 * @return whether the SpaceMan is jumping.
-	 */
-	public void setCanJump(boolean a){canJump=a;}
+	
 	/**
 	 * Steps in x direction.
 	 */
@@ -296,4 +290,10 @@ public class SpaceMan extends GameObject
 	 * Steps in y direction.
 	 */
 	public void incY(){y+=velY;}
+	/**
+	 * Sets Platform speed to given velocity
+	 */
+	public void setPlatformSpeed(double vx){
+		this.platformSpeed=vx;
+	}
 }

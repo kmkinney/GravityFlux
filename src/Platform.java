@@ -41,4 +41,5 @@ public class Platform extends GameObject
 	 * Called evey a delay milliseconds to use if object is animated.
 	 */
 	public void animate(){}
+	public boolean isMoving(){return false;}
 }

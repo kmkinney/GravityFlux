@@ -3,81 +3,85 @@
 
 <levels>
 	
-	<!-- flip mania (medium_hard)-->
+	<!--Moving Platforms!-->
 	<level width="5000">
 		<spaceman>
-			<xpos>10</xpos>
-			<ypos>600</ypos>
+			<xpos>50</xpos>
+			<ypos>200</ypos>
 		</spaceman>
 		<flag>
 			<xpos>4900</xpos>
-			<ypos>550</ypos>
+			<ypos>150</ypos>
 		</flag>
+		<objects>
+			<object type="space-ship">
+				<xpos>10</xpos>
+				<ypos>200</ypos>
+			</object>
+		</objects>
 		<hazards>
-			<hazard type="spike-flipped">
-				<xpos>0</xpos>
-				<ypos>50</ypos>
-				<width>200</width>
-			</hazard>
 			<hazard type="spike">
-				<xpos>0</xpos>
-				<ypos>665</ypos>
-				<width>192</width>
-			</hazard>
-			<hazard type="spike">
-				<xpos>3000</xpos>
+				<xpos>1400</xpos>
 				<ypos>350</ypos>
+				<width>15</width>
+			</hazard>
+			<hazard type="spike">
+				<xpos>1850</xpos>
+				<ypos>350</ypos>
+				<width>14</width>
+			</hazard>
+			<hazard type="spike">
+				<xpos>2200</xpos>
+				<ypos>675</ypos>
 				<width>30</width>
 			</hazard>
 		</hazards>
 		<platforms>
 			<platform>
 				<xpos>0</xpos>
-				<ypos>600</ypos>
+				<ypos>550</ypos>
 				<width>100</width>
 				<height>10</height>
 			</platform>
-			<platform>
-				<xpos>400</xpos>
-				<ypos>100</ypos>
-				<width>100</width>
+			<platform type="moving">
+				<xpos>200</xpos>
+				<xend>600</xend>
+				<speed>2</speed>
+				<ypos>550</ypos>
+				<width>200</width>
 				<height>10</height>
 			</platform>
 			<platform>
+				<xpos>850</xpos>
+				<ypos>550</ypos>
+				<width>100</width>
+				<height>10</height>
+			</platform>
+			<platform type="moving">
 				<xpos>1000</xpos>
+				<xend>1600</xend>
+				<speed>3</speed>
+				<ypos>50</ypos>
+				<width>100</width>
+				<height>10</height>
+			</platform>
+			<platform>
+				<xpos>1400</xpos>
 				<ypos>450</ypos>
-				<width>100</width>
-				<height>10</height>
+				<width>800</width>
+				<height>250</height>
 			</platform>
 			<platform>
-				<xpos>1500</xpos>
-				<ypos>630</ypos>
-				<width>100</width>
-				<height>10</height>
-			</platform>
-			<platform>
-				<xpos>2000</xpos>
-				<ypos>75</ypos>
-				<width>100</width>
-				<height>10</height>
-			</platform>
-			<platform>
-				<xpos>2200</xpos>
+				<xpos>2300</xpos>
 				<ypos>150</ypos>
-				<width>100</width>
-				<height>10</height>
-			</platform>
-			<platform>
-				<xpos>2500</xpos>
-				<ypos>350</ypos>
-				<width>1500</width>
-				<height>10</height>
+				<width>2000</width>
+				<height>50</height>
 			</platform>
 			<platform>
 				<xpos>4800</xpos>
-				<ypos>550</ypos>
+				<ypos>150</ypos>
 				<width>200</width>
-				<height>150</height>
+				<height>550</height>
 			</platform>
 		</platforms>
 	</level>

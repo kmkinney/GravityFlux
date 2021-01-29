@@ -16,8 +16,8 @@ public class Scores extends JFrame implements KeyListener
 	public static final int HEIGHT = (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()*.5);
 	public static final int WIDTH = (int)(HEIGHT*1.3);
 	
-	public static Font titleFont = new Font("Agency FB", Font.ITALIC,(int)(45*GameObject.SCALE));
-	public static Font opFont = new Font("Agency FB", Font.PLAIN, (int)(35*GameObject.SCALE));
+	public static Font titleFont = new Font("Agency FB", Font.ITALIC,(int)(45*Game.SCALE));
+	public static Font opFont = new Font("Agency FB", Font.PLAIN, (int)(35*Game.SCALE));
 	public static String savepath = "scores.dat";
 	
 	private JLabel title, cont; 

@@ -100,6 +100,11 @@ public class GameComponent extends JComponent implements Runnable
 	{
 		gmObjects = levels.get(level).getObjects();
 		terrain = levels.get(level).getPlatforms();
+
+		//testing purposes
+		//terrain.push(new MovingPlatform(400, 550, 200, 10, 600, 550, 2, 0));
+		//
+
 		hazards = levels.get(level).getHazards();
 		gmObjects.addAll(terrain);
 		gmObjects.addAll(hazards);
@@ -107,7 +112,7 @@ public class GameComponent extends JComponent implements Runnable
 		fl = levels.get(level).getFlag();
 		levelWidth = levels.get(level).getWidth();
 		screenScroll=0;
-		sm.fall();
+
 	}
 	/**
 	 * Starts the game loop
@@ -267,14 +272,11 @@ public class GameComponent extends JComponent implements Runnable
 			else{
 				sm.setVelY(sm.getVelY()/2);
 			}
-			if(currPlat!=null && (sm.getX() < currPlat.getX() || sm.getX() > currPlat.getX()+currPlat.getW()+2)){
-					//if(keyDown[1]){
-						//sm.startJump();
-					//}else{
-						sm.fall();
-						sm.setCanJump(false);
-					//}
-					
+			if(currPlat!=null && (sm.getX() < currPlat.getX() || sm.getX()+1 > currPlat.getX()+currPlat.getW())){
+				if(keyDown[1])
+					sm.startJump();
+				else
+					sm.fall();
 			}
 			
 			look = sm.lookAhead();
@@ -286,7 +288,16 @@ public class GameComponent extends JComponent implements Runnable
 					hit();
 				}
 			}
-			
+			//Moving Platform Mechanics
+			if(currPlat!=null && currPlat.isMoving()){
+				sm.setPlatformSpeed(currPlat.getVelX());
+			}
+			else{
+				sm.setPlatformSpeed(0);
+			}
+			if(sm.isJumping()){
+				currPlat=null;
+			}
 		}
 	}
 	/**
@@ -324,6 +335,7 @@ public class GameComponent extends JComponent implements Runnable
 				lives.pop();
 			scroll(-screenScroll);
 			sm.reset();
+			currPlat=null;
 			screenScroll=0;
 		}
 	}
@@ -384,7 +396,7 @@ public class GameComponent extends JComponent implements Runnable
 					break;
 				case KeyEvent.VK_UP:
 					keyDown[1]=true;
-					if(sm.canJump())
+					if(!sm.isJumping())
 						sm.startJump();
 					break;
 				case KeyEvent.VK_D:
