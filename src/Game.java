@@ -15,8 +15,11 @@ public class Game extends JFrame
 {
 	public static final int BASE_HEIGHT = 700;
 	public static final int BASE_WIDTH = 1000;
-	public static final int HEIGHT = (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()*.7);
+	public static final int S_HEIGHT = (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()*.7);
+	public static final int S_WIDTH = (int)(S_HEIGHT*((double)BASE_WIDTH/BASE_HEIGHT));
+	public static final int HEIGHT = (int)((double)S_HEIGHT * Toolkit.getDefaultToolkit().getScreenResolution()/100);
 	public static final int WIDTH = (int)(HEIGHT*((double)BASE_WIDTH/BASE_HEIGHT));
+	public static final double SCALE = (double)Game.S_HEIGHT / Game.BASE_HEIGHT;
 	
 	private GameComponent comp;
 	
@@ -32,7 +35,7 @@ public class Game extends JFrame
 	 */
 	public void startGame()
 	{
-		setSize(WIDTH, HEIGHT);
+		setSize(S_WIDTH, S_HEIGHT);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -46,7 +49,7 @@ public class Game extends JFrame
 	 */
 	public void help()
 	{
-		setSize(WIDTH, HEIGHT);
+		setSize(S_WIDTH, S_HEIGHT);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -60,7 +63,7 @@ public class Game extends JFrame
 	 */
 	public void custom()
 	{
-		setSize(WIDTH, HEIGHT);
+		setSize(S_WIDTH, S_HEIGHT);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		

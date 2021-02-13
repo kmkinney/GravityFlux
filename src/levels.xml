@@ -7,22 +7,28 @@
 <!--================================LEVEL 1===============================-->
 	<level width="1000">
 		<spaceman>
-			<xpos>10</xpos>
-			<ypos>625</ypos>
+			<xpos>50</xpos>
+			<ypos>200</ypos>
 		</spaceman>
+		<objects>
+			<object type="space-ship">
+				<xpos>10</xpos>
+				<ypos>200</ypos>
+			</object>
+		</objects>
 		<flag>
 			<xpos>900</xpos>
 			<ypos>625</ypos>
 		</flag>
 		<hazards>
 			<hazard type="spike">
-				<xpos>275</xpos>
-				<ypos>625</ypos>
+				<xpos>300</xpos>
+				<ypos>650</ypos>
 				<width>4</width>
 			</hazard>
 			<hazard type="spike">
 				<xpos>550</xpos>
-				<ypos>625</ypos>
+				<ypos>650</ypos>
 				<width>4</width>
 			</hazard>
 		</hazards>
@@ -30,7 +36,19 @@
 			<platform>
 				<xpos>0</xpos>
 				<ypos>625</ypos>
-				<width>1000</width>
+				<width>300</width>
+				<height>20</height>
+			</platform>
+			<platform>
+				<xpos>400</xpos>
+				<ypos>625</ypos>
+				<width>150</width>
+				<height>20</height>
+			</platform>
+			<platform>
+				<xpos>650</xpos>
+				<ypos>625</ypos>
+				<width>400</width>
 				<height>20</height>
 			</platform>
 		</platforms>
@@ -38,9 +56,15 @@
 <!--===================LEVEL 2===================================-->
 	<level width="2000">
 		<spaceman>
-			<xpos>10</xpos>
-			<ypos>625</ypos>
+			<xpos>50</xpos>
+			<ypos>200</ypos>
 		</spaceman>
+		<objects>
+			<object type="space-ship">
+				<xpos>10</xpos>
+				<ypos>200</ypos>
+			</object>
+		</objects>
 		<flag>
 			<xpos>1800</xpos>
 			<ypos>625</ypos>
@@ -83,9 +107,15 @@
 <!--==============Level 3==================-->
 	<level width="1000">
 		<spaceman>
-			<xpos>10</xpos>
-			<ypos>500</ypos>
+			<xpos>50</xpos>
+			<ypos>200</ypos>
 		</spaceman>
+		<objects>
+			<object type="space-ship">
+				<xpos>10</xpos>
+				<ypos>200</ypos>
+			</object>
+		</objects>
 		<flag>
 			<xpos>900</xpos>
 			<ypos>625</ypos>
@@ -121,9 +151,15 @@
 <!--jump flip with thin at end and spikes-->
 	<level width="5000">
 		<spaceman>
-			<xpos>10</xpos>
-			<ypos>600</ypos>
+			<xpos>50</xpos>
+			<ypos>200</ypos>
 		</spaceman>
+		<objects>
+			<object type="space-ship">
+				<xpos>10</xpos>
+				<ypos>200</ypos>
+			</object>
+		</objects>
 		<flag>
 			<xpos>4500</xpos>
 			<ypos>350</ypos>
@@ -143,9 +179,9 @@
 				<height>25</height>
 			</platform>
 			<platform>
-				<xpos>395</xpos>
+				<xpos>300</xpos>
 				<ypos>550</ypos>
-				<width>200</width>
+				<width>220</width>
 				<height>25</height>
 			</platform>
 			<platform>
@@ -195,9 +231,15 @@
 		<!-- flip mania (medium_hard)-->
 	<level width="5000">
 		<spaceman>
-			<xpos>10</xpos>
-			<ypos>600</ypos>
+			<xpos>50</xpos>
+			<ypos>200</ypos>
 		</spaceman>
+		<objects>
+			<object type="space-ship">
+				<xpos>10</xpos>
+				<ypos>200</ypos>
+			</object>
+		</objects>
 		<flag>
 			<xpos>4900</xpos>
 			<ypos>550</ypos>
@@ -228,7 +270,7 @@
 			</platform>
 			<platform>
 				<xpos>400</xpos>
-				<ypos>100</ypos>
+				<ypos>120</ypos>
 				<width>100</width>
 				<height>10</height>
 			</platform>
@@ -273,9 +315,15 @@
 <!-- space jumping (medium_hard)-->
 	<level width="4000">
 		<spaceman>
-			<xpos>10</xpos>
-			<ypos>550</ypos>
+			<xpos>50</xpos>
+			<ypos>200</ypos>
 		</spaceman>
+		<objects>
+			<object type="space-ship">
+				<xpos>10</xpos>
+				<ypos>200</ypos>
+			</object>
+		</objects>
 		<flag>
 			<xpos>3700</xpos>
 			<ypos>550</ypos>
@@ -308,7 +356,7 @@
 				<height>10</height>
 			</platform>
 			<platform>
-				<xpos>1540</xpos>
+				<xpos>1550</xpos>
 				<ypos>550</ypos>
 				<width>30</width>
 				<height>10</height>
@@ -339,7 +387,88 @@
 			</platform>
 		</platforms>
 	</level>
-	
+	<!--Moving Platforms!-->
+	<level width="5000">
+		<spaceman>
+			<xpos>50</xpos>
+			<ypos>200</ypos>
+		</spaceman>
+		<flag>
+			<xpos>4900</xpos>
+			<ypos>150</ypos>
+		</flag>
+		<objects>
+			<object type="space-ship">
+				<xpos>10</xpos>
+				<ypos>200</ypos>
+			</object>
+		</objects>
+		<hazards>
+			<hazard type="spike">
+				<xpos>1400</xpos>
+				<ypos>350</ypos>
+				<width>15</width>
+			</hazard>
+			<hazard type="spike">
+				<xpos>1850</xpos>
+				<ypos>350</ypos>
+				<width>14</width>
+			</hazard>
+			<hazard type="spike">
+				<xpos>2200</xpos>
+				<ypos>675</ypos>
+				<width>30</width>
+			</hazard>
+		</hazards>
+		<platforms>
+			<platform>
+				<xpos>0</xpos>
+				<ypos>550</ypos>
+				<width>100</width>
+				<height>10</height>
+			</platform>
+			<platform type="moving">
+				<xpos>200</xpos>
+				<xend>600</xend>
+				<speed>2</speed>
+				<ypos>550</ypos>
+				<width>200</width>
+				<height>10</height>
+			</platform>
+			<platform>
+				<xpos>850</xpos>
+				<ypos>550</ypos>
+				<width>100</width>
+				<height>10</height>
+			</platform>
+			<platform type="moving">
+				<xpos>1000</xpos>
+				<xend>1600</xend>
+				<speed>3</speed>
+				<ypos>50</ypos>
+				<width>100</width>
+				<height>10</height>
+			</platform>
+			<platform>
+				<xpos>1400</xpos>
+				<ypos>450</ypos>
+				<width>800</width>
+				<height>250</height>
+			</platform>
+			<platform>
+				<xpos>2300</xpos>
+				<ypos>150</ypos>
+				<width>2000</width>
+				<height>50</height>
+			</platform>
+			<platform>
+				<xpos>4800</xpos>
+				<ypos>150</ypos>
+				<width>200</width>
+				<height>550</height>
+			</platform>
+		</platforms>
+	</level>
 		
 
 </levels>

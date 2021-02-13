@@ -83,7 +83,20 @@ public class LevelParser
 			LinkedList<GameObject> hazards = new LinkedList<>();
 			ob.add(sm);
 			ob.add(fl);
-			
+			int numObjects = Integer.parseInt(path.evaluate("count("+levelPath+"/objects/object)", doc));
+			for(int j=1;j<=numObjects;j++){
+				String oPath = levelPath+"/objects/object["+j+"]";
+				String oType = path.evaluate(oPath+"/@type", doc);
+				
+				double ox = Double.parseDouble(path.evaluate(oPath+"/xpos", doc));
+				double oy = Double.parseDouble(path.evaluate(oPath+"/ypos", doc));
+				switch(oType){
+					case "space-ship":
+						ob.add(new SpaceShip(ox, oy));
+						break;
+				}
+			}	
+
 			int numHazards = Integer.parseInt(path.evaluate("count("+levelPath+"/hazards/hazard)", doc));
 			
 			for(int j=1;j<=numHazards;j++){
@@ -109,13 +122,23 @@ public class LevelParser
 			for(int j=1;j<=numPlats;j++)
 			{
 				String platPath = levelPath+"/platforms/platform["+j+"]";
-				
+				String pType = path.evaluate(platPath+"/@type", doc);
+
 				double xp = Double.parseDouble(path.evaluate(platPath+"/xpos", doc));
 				double yp = Double.parseDouble(path.evaluate(platPath+"/ypos", doc));
 				double w = Double.parseDouble(path.evaluate(platPath+"/width", doc));
 				double h = Double.parseDouble(path.evaluate(platPath+"/height", doc));
 				
-				terrain.add(new Platform(xp,yp,w,h));
+				//Moving Platform
+				if(pType!=null && pType.equals("moving")){
+					double endX = Double.parseDouble(path.evaluate(platPath+"/xend", doc));
+					double speed = Double.parseDouble(path.evaluate(platPath+"/speed", doc));
+					terrain.add(new MovingPlatform(xp, yp, w, h, endX, speed));
+				}
+				//Non-moving Platform
+				else{
+					terrain.add(new Platform(xp,yp,w,h));
+				}
 			}
 			levels.add(new Level(i,width,terrain,hazards,ob,sm,fl));
 		}

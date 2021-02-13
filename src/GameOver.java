@@ -15,8 +15,8 @@ public class GameOver extends JFrame implements MouseListener
 	public static final int HEIGHT = (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()*.5);
 	public static final int WIDTH = (int)(HEIGHT*1.3);
 	
-	public static Font titleFont = new Font("Agency FB", Font.ITALIC,(int)(45*GameObject.SCALE));
-	public static Font opFont = new Font("Agency FB", Font.PLAIN, (int)(35*GameObject.SCALE));
+	public static Font titleFont = new Font("Agency FB", Font.ITALIC,(int)(45*Game.SCALE));
+	public static Font opFont = new Font("Agency FB", Font.PLAIN, (int)(35*Game.SCALE));
 	
 	private JLabel title, playAgain, quit;
 	private long s;
@@ -55,7 +55,7 @@ public class GameOver extends JFrame implements MouseListener
 		}
 		else{
 			panel.add(new JLabel());
-			panel.add(new JLabel("LEVEL REACHED:    "+(level+1)));
+			panel.add(new JLabel("LEVEL REACHED: "+(level+1)));
 			panel.add(new JLabel());
 		}
 		

@@ -15,8 +15,8 @@ public class Menu extends JFrame implements MouseListener
 	public static final int HEIGHT = (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()*.5);
 	public static final int WIDTH = (int)(HEIGHT*1.3);
 	
-	public static Font opFont = new Font("Agency FB", Font.PLAIN, (int)(30*GameObject.SCALE));
-	public static Font titleFont = new Font("Eras Medium ITC", Font.PLAIN, (int)(35*GameObject.SCALE));
+	public static Font opFont = new Font("Agency FB", Font.PLAIN, (int)(30*Game.SCALE));
+	public static Font titleFont = new Font("Eras Medium ITC", Font.PLAIN, (int)(35*Game.SCALE));
 	
 	private JLabel title, start, help, quit, custom;
 	private Game game;
