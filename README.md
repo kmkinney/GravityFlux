@@ -2,7 +2,7 @@ GravityFlux
 ================
 ## Author: Kevin Kinney
 
-![Gamelplay](https://github.com/kmkinney/GravityFlux/src/gravity-flux.jpg?raw=true)
+![Gamelplay](./gravity-flux.png)
 
 GravityFlux is a game I created in High School.
 
